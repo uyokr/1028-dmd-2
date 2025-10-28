@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>성심당, 인기의 비결은?</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #1e1e1e;
+            color: #f4f4f4;
+        }
+        
+        section {
+            padding: 50px 0px;
+            text-align: center;
+        }
+        
+        .contents {
+            width: 600px;
+            margin: auto;
+            padding: 200px 0px;
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contents-nopad {
+            width: 600px;
+            margin: auto;
+            padding: 50px 0px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 { font-size: 3.5rem; font-weight: 900; margin: 10px 0; }
+        h2 { font-size: 2rem; font-weight: 700; margin: 15px 0; line-height: 1.4; }
+        h3 { font-size: 1.4rem; font-weight: 700; color: #fdd835; margin: 15px 0; }
+        p { font-size: 1.1rem; line-height: 1.8; max-width: 600px; }
+        .highlight { color: #fdd835; }
+        .large-text { font-size: 1.5rem; font-weight: 700; }
+
+        img { max-width: 100%; height: auto; border-radius: 12px; margin: 20px 0; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); }
+        blockquote { font-size: 1.2rem; font-style: italic; background-color: #1e1e1e; padding: 25px; margin: 20px 0; border-left: 5px solid #fdd835; border-radius: 0 8px 8px 0; max-width: 550px; line-height: 1.7; }
+        cite { display: block; text-align: right; font-size: 1rem; color: #aaa; margin-top: -10px; margin-right: 10px; }
+        ul { list-style: none; padding: 0; max-width: 550px; }
+        ul li { background-color: #1e1e1e; padding: 15px 20px; margin-bottom: 10px; border-radius: 8px; font-size: 1.05rem; text-align: left; }
+
+        #page-3 {
+            position: relative;
+            color: #fff;
+        }
+        #page-3::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+        #page-3 .contents {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .menu-layout-flex { display: flex; justify-content: center; align-items: stretch; flex-wrap: wrap; width: 100%; margin: 30px 0; gap: 20px; }
+        .cake-column { flex: 1; min-width: 180px; display: flex; flex-direction: column; align-items: center; height: 100%; }
+        #col-left { justify-content: space-between; }
+        #col-mid { justify-content: flex-end; }
+        #col-right { justify-content: space-between; }
+        .cake-item { margin: 0; }
+        .cake-item img { width: 100%; max-width: 200px; height: auto; aspect-ratio: 1/1; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); margin-bottom: 10px; }
+        .cake-item figcaption { text-align: center; margin-top: 5px; font-size: 1rem; color: #ccc; }
+        .season-text-box { border: 2px solid #f4f4f4; border-radius: 20px; padding: 20px 15px; margin-bottom: 20px; width: 150px; text-align: center; }
+        .season-text-box p { font-size: 1.1rem; font-weight: 700; line-height: 1.5; margin: 3px 0; }
+        .bottom-text { margin-top: 30px; font-size: 1.1rem; line-height: 1.8; max-width: 600px; text-align: left; }
+        .bottom-text p { text-align: left; }
+
+        .bread-gallery { display: flex; justify-content: space-around; flex-wrap: wrap; width: 100%; }
+        .bread-gallery figure { margin: 10px; }
+        .bread-gallery figure img { width: 180px; height: 180px; object-fit: cover; border-radius: 50%; }
+
+        @media (max-width: 600px) {
+            .contents, .contents-nopad {
+                width: 90%;
+                padding: 100px 15px;
+            }
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 1.6rem; }
+            p { font-size: 1rem; }
+            blockquote { font-size: 1.1rem; padding: 20px; }
+            
+            .menu-layout-flex { flex-direction: column; align-items: center; gap: 30px; }
+            .cake-column { width: 100%; }
+            #col-left { order: 1; }
+            #col-mid { order: 2; }
+            #col-right { order: 3; }
+            .bottom-text { text-align: center; margin-top: 30px; }
+            .bottom-text p { text-align: center; }
+
+            .bread-gallery { flex-direction: column; align-items: center; }
+        }
+        .interview-box {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            width: 100%;
+            max-width: 550px;
+        }
+        .interview-box blockquote {
+            background-color: #121212;
+        }
+        footer {
+            width: 100%;
+            padding: 50px 0;
+            margin-top: 50px;
+            border-top: 1px solid #333;
+            color: #aaa;
+            font-size: 0.9rem;
+            background-color: #121212;
+        }
+
+        .footer-container {
+            max-width: 800px;
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .footer-column {
+            min-width: 200px;
+            text-align: left;
+        }
+
+        .footer-column h4 {
+            color: var(--sungsim-yellow, #fdd835);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .footer-column p {
+            margin: 8px 0;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #ccc;
+            max-width: 100%;
+        }
+        
+        @media (max-width: 600px) {
+            .footer-container {
+                width: 600px;
+                flex-direction: column;
+            }
+            .footer-column {
+                flex-basis: 100%;
+                min-width: 100%;
+                margin-bottom: 25px;
+            }
+            .footer-column:last-child {
+                margin-bottom: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section style="background-color: #1e1e1e;"> <div class="contents">
+            <h1 style="font-size: 4rem;">성심당,</h1> <h2>인기의 비결은<br>빵보다 <span class="highlight">□□</span>.</h2>
+            <img src="ts.png" alt="성심당 튀김소보로 포장지">
+        </div>
+    </section>
+
+    <section style="background-color: #1e1e1e;"> <div class="contents">
+            <h2>노잼도시 대전에서<br><span class="highlight">빵의도시 대전으로</span></h2>
+            <img src="grp.png" alt="성심당 매출 변화 그래프 2012년 100억에서 2025년 1900억">
+            <p>성심당 매출 변화</p>
+        </div>
+    </section>
+
+    <section id="page-3" style="background: url('ssd.jpg'); background-size: cover; background-attachment: fixed; background-position: center;">
+        <div class="contents">
+            <h2>밀가루 두 포대의 기적,<br>대전의 문화가 되다.</h2>
+            <p>1950년, 전쟁 속 피난길. 임길순·한순덕 부부는 흥남 철수작전의 메러디스 빅토리호에 올라 기적처럼 살아남았습니다.</p>
+            <p>서울로 향하던 길, 열차 고장으로 우연히 머문 도시 - 대전. 대흥동성당에서 받은 밀가루 두 포대로 대전역 앞에서 작은 찐빵집을 열었습니다.</p>
+            <blockquote>"살아 돌아간다면, 남은 삶은 이웃을 위해 살겠다."</blockquote>
+            <p>그 기도가 지금의 성심당을 만들었습니다. 오늘도 성심당은 "모든 이가 다 좋게 여기는 일을 하십시오." 라는 창업주의 마음으로 대전의 따뜻한 빵을 굽고 있습니다.</p>
+        </div>
+    </section>
+
+    <section style="background-color: #1e1e1e;">
+        <div class="contents">
+            <h2>성심당이 사랑 받는 이유<br><span class="highlight">① 사회적 기여</span></h2>
+            <img src="nn.jpeg" alt="나눔 활동 사진">
+            <h3>&lt;이웃과의 '빵 나눔' 활동&gt;</h3>
+            <ul>
+                <li>매년 복지시설, 노숙인 쉼터, 장애인 단체 등에 수천 개의 빵을 무상 기부.</li>
+                <li>"이웃과 함께 굽는 빵이 가장 맛있다"는 창업주 철학을 실천 중.</li>
+                <li>코로나19 당시에도 매장 매출이 줄었지만 기부만큼은 멈추지 않았음.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section style="background-color: #1e1e1e;"> <div class="contents">
+            <h2>성심당이 사랑 받는 이유<br><span class="highlight">② 직원 고용과 복지</span></h2>
+            <img src="itv.png" alt="성심당 15년 차 직원 박선희 씨">
+            <p>과다 노동, 갑질 등의 이슈가 많은 시대, 성심당은 직원과의 가족같은 분위기를 유지합니다. 전체 직원 중 86%가 정규직이며, 직원들 위해 쓰이는 복리후생비도 꾸준히 늘고 있습니다.</p>
+        </div>
+    </section>
+
+    <section style="background-color: #1e1e1e;">
+            <div class="contents-nopad" id="page-6-custom"> <h2>성심당이 사랑 받는 이유<br><span class="highlight">③ 꾸준한 메뉴 연구</span></h2>
+                
+                <div class="menu-row">
+                    <div class="menu-item">
+                        <figure class="cake-item">
+                            <img src="tr.png" alt="생귤시루">
+                            <figcaption>&lt;생귤시루&gt;</figcaption>
+                        </figure>
+                    </div>
+                    <div class="menu-item">
+                        <figure class="cake-item">
+                            <img src="ab.png" alt="알밤시루">
+                            <figcaption>&lt;알밤시루&gt;</figcaption>
+                        </figure>
+                    </div>
+
+                    <div class="menu-item">
+                        </div>
+                    <div class="menu-item" style="justify-content: flex-start;">
+                        <figure class="cake-item">
+                            <img src="kw.png" alt="키위시루">
+                            <figcaption>&lt;키위시루&gt;</figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <div class="menu-row">
+                    <div class="menu-item" style="justify-content: flex-start;">
+                        <div class="bottom-text">
+                            <p>단순한 생크림 케이크에서<br>제철 과일이 올라간 케이크까지 ···</p>
+                            <p>투표 기간에는 투표 독려 선거빵,<br>광복절에는 광복 기념 빵.<br><span class="highlight">시기와 사회 트렌드를 빵에 녹여낸다.</span></p>
+                        </div>
+                    </div>
+                    
+            </div>
+        </section>
+
+    <section style="background-color: #1e1e1e;">
+        <div class="contents">
+            <h2>체인점을 만들지 않는<br>이유는 무엇일까?</h2>
+            <img src="es.png" alt="성심당 임영진 대표이사">
+            <h3>&gt;&gt; 성심당의 가치와 성심당만의 순수한 맛 때문!</h3>
+            <blockquote>"그렇게 되면 우리도 대기업 프랜차이즈 빵집과 똑같이 되는 거다. 규모가 커질 뿐만 아니라 성심당이 갖고 있는 '가치'를 잃게 된다고 생각한다... 여러 체인점에 배송하려면 시간이 걸리고 그 시간을 견뎌야 하니까 첨가제를 넣을 수밖에 없고... 순수한 맛이 없어지게 된다."</blockquote>
+            <cite>- 임영진 대표이사, 2014년 인터뷰에서</cite>
+            <p class="highlight large-text">지역 특색으로 자리잡음!</p>
+        </div>
+    </section>
+
+    <section id="page-3" style="background: url('ys.jpg'); background-size: cover; background-attachment: fixed; background-position: center;">
+        <div class="contents">
+            <h2>빵으로<br>세상을 따뜻하게.</h2>
+            <h3>&lt;성심당 소개문&gt;</h3>
+            <blockquote>"우리에게 '빵'이란 생계의 유지 수단이기도 하지만 지역 경제와 사랑의 공동체, 빈곤의 문제를 해결하는 또 하나의 가치이며 동력입니다... 빵으로도 얼마든지 세상을 바꿀 수 있다는 생각이 듭니다... '맛있는 빵, 경이로운 빵, 생명의 빵'을 통해 사랑의 문화를 이루어 가겠습니다"</blockquote>
+            <h2 class="highlight">"성심당은 빵 뿐만이 아니라<br>마음도 굽는다.”</h2>
+        </div>
+    </section>
+
+    <section style="background-color: #1e1e1e;">
+        <div class="contents">
+            <h2>번외<br><span class="highlight">대전인이 말아주는 빵킷리스트 *</span></h2>
+            <div class="bread-gallery">
+                <figure>
+                    <img src="ts.png" alt="튀김소보로">
+                    <figcaption>튀김소보로</figcaption>
+                </figure>
+                <figure>
+                    <img src="mb.png" alt="명란바게트">
+                    <figcaption>명란바게트</figcaption>
+                </figure>
+                <figure>
+                    <img src="bc.png" alt="부추빵">
+                    <figcaption>부추빵</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+   <section id="page-3" style="background: url('dj.jpg'); background-size: cover; background-attachment: fixed; background-position: center;">
+        <div class="contents">
+            <h1 style="font-size: 3.5rem; color: #fdd835;">국내 여행은<br>대전으로 오셔유~</h1>
+            <h2>(후회는 없을 겨.)</h2>
+        </div>
+    </section>
+    </body>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>concept</h4>
+                <p>성심당</p>
+            </div>
+            <div class="footer-column">
+                <h4>designer</h4>
+                <p>시각디자인전공</p>
+                <p>24101029 윤동주</p>
+            </div>
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <p>insta@uvokr</p>
+                <p>banana050928@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+    </body> 
+</html>
